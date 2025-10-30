@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DowndFaby Web</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <section class="login-section">
+  <div class="login-box">
+    <h2>Entrar no DowndFaby</h2>
+    <form id="login-form">
+      <input type="text" id="username" placeholder="Usuário" required />
+      <input type="password" id="password" placeholder="Senha" required />
+      <button type="submit">Login</button>
+    </form>
+    <p id="login-message"></p>
+  </div>
+</section>
+    <div class="spiral-bg"></div>
+  <!-- Música de fundo -->
+  <audio id="bg-music" loop src="Lobby_DowndFaby.wav"></audio>
+  <button id="toggle-music" class="music-button">🎵</button>
+
+  <!-- Navegação -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_69029c56c0600bb60cd0fab1/b9c75ad57_image.png" alt="DowndFaby Logo" />
+      <span>DowndFaby</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#historia">História</a></li>
+      <li><a href="#modos">Modos</a></li>
+      <li><a href="#arsenal">Arsenal</a></li>
+      <li><a href="#novidades">Novidades</a></li>
+      <li><a href="#cta" class="play-button">Jogar Agora</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge">✨ Desenvolvido em Unreal Engine 5.7</span>
+      <h1>DowndFaby</h1>
+      <p>O battle royale mais delicioso do universo! Prepare-se para batalhas épicas com armas de hotdog em um mundo surreal e vibrante.</p>
+      <div class="hero-buttons">
+        <button class="primary">🎮 Começar a Jogar</button>
+        <button class="secondary">🎯 Ver Trailer</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- História -->
+  <section id="historia" class="section historia">
+    <h2>A História</h2>
+    <div class="historia-content">
+      <div class="text">
+        <p>Em um universo paralelo onde os hotdogs evoluíram e ganharam consciência, uma competição épica foi criada para determinar o guerreiro definitivo.</p>
+        <p>Armados com os ingredientes mais letais - de rifles de salsicha a escopetas de cereal e baunilha - os competidores lutam pela supremacia em arenas futuristas geradas por tecnologia de ponta.</p>
+        <p>Você está pronto para se tornar a lenda de DowndFaby? O campo de batalha aguarda!</p>
+      </div>
+      <div class="image">
+        <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80" alt="Battle Arena" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Modos de Jogo -->
+  <section id="modos" class="section modos">
+    <h2>Modos de Jogo</h2>
+    <div class="cards" id="game-modes"></div>
+  </section>
+
+  <!-- Arsenal -->
+  <section id="arsenal" class="section arsenal">
+    <h2>Arsenal Letal</h2>
+    <div class="cards" id="weapons"></div>
+  </section>
+
+  <!-- Novidades -->
+  <section id="novidades" class="section novidades">
+    <h2>Últimas Novidades</h2>
+    <div class="cards" id="news"></div>
+  </section>
+
+  
+  <section id="Sobre o DowndFaby" class="section">
+    <h2>E sobre futuro do DowndFaby?</h2>
+    <div class="card" id="Capitulo"></div>
+    <div id="Capitulo" class="cards"></div>
+  </section>
+
+  <!-- CTA Final -->
+  <section id="cta" class="section cta">
+    <h2>Pronto para a Batalha?</h2>
+    <p>Junte-se a milhares de jogadores e mostre suas habilidades no DowndFaby!</p>
+    <button class="cta-button">🎮 Baixar Agora - Grátis</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_69029c56c0600bb60cd0fab1/b9c75ad57_image.png" alt="DowndFaby" />
+      <span>DowndFaby</span>
+    </div>
+    <p>Desenvolvido com Unreal Engine 5.7</p>
+    <p>© 2025 DowndFaby. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
