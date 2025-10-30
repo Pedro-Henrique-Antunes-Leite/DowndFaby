@@ -390,27 +390,3 @@ button {
   box-shadow: 0 0 12px rgb(0, 255, 255);
   transition: all 0.3s ease;
 }
-
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 24px rgb(179, 0, 255);
-}
-
-img {
-  filter: brightness(1.2) contrast(1.1);
-}
-
-h1, h2, h3 {
-  color: #ffffff;
-  text-shadow: 0 0 8px rgb(0, 255, 255);
-}
-
-p {
-  color: #ffffff;
-}
-
-.badge {
-  background: linear-gradient(to right, #ffa200, #ff0000);
-  color: white;
-  box-shadow: 0 0 8px rgb(255, 255, 255);
-}
