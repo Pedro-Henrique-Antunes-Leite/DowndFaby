@@ -1,37 +1,21 @@
-/* Reset básico */
+/* 🔄 Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
 
-  
+p{
+color: #ffffff;
 }
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0f0f0f;
+  background: #000;
   color: #fff;
-  line-height: 1.6;
-
 }
 
-@keyframes glowIn {
-  0% {
-    opacity: 0;
-    filter: brightness(0.5);
-  }
-  50% {
-    opacity: 0.5;
-    filter: brightness(1.2);
-  }
-  100% {
-    opacity: 1;
-    filter: brightness(1);
-  }
-
-}
-
-/* Música */
+/* 🎵 Botão de música */
 .music-button {
   position: fixed;
   top: 110px;
@@ -42,17 +26,43 @@ body {
   border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
-  z-index: 100000;
+  z-index: 1000;
 }
 
-/* Navbar */
+
+/* 🔝 Navbar */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(15, 15, 15, 0.9);
+  background-color: rgba(15, 15, 15, 0.6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  z-index: 1000;
+}
+
+.main {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(15, 15, 15, 0.6);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  z-index: 999;
+}
+
+.label {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,58 +84,35 @@ body {
 .logo span {
   font-size: 24px;
   font-weight: bold;
-  background: linear-gradient(to right, #06b6d4, #9333ea);
+  background: linear-gradient(to right, #06b6d4, #8400ff);
   -webkit-background-clip: text;
   color: transparent;
 }
 
-.nav-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-}
-
-.nav-links a {
-  color: #ccc;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #06b6d4;
-}
-
-.play-button {
-  background: linear-gradient(to right, #06b6d4, #9333ea);
-  padding: 8px 16px;
-  border-radius: 8px;
-  color: white;
-  font-weight: bold;
-}
-
-/* Hero */
+/* 🦸 Hero Section */
 .hero {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 120px 32px 64px;
-  background: linear-gradient(to bottom right, #0f0f0f, #1a1a1a);
   text-align: center;
 }
 
 .hero-content h1 {
   font-size: 64px;
+  font-weight: 900;
+  margin-bottom: 16px;
   background: linear-gradient(to right, #06b6d4, #9333ea, #ec4899);
   -webkit-background-clip: text;
   color: transparent;
-  font-weight: 900;
-  margin-bottom: 16px;
 }
 
 .hero-content p {
   font-size: 20px;
-  color: #ccc;
+  color: #ffffff;
   max-width: 600px;
   margin: 0 auto 24px;
 }
@@ -140,9 +127,9 @@ body {
 .primary, .secondary {
   padding: 16px 24px;
   font-size: 18px;
-  border: none;
   border-radius: 12px;
   cursor: pointer;
+  border: none;
 }
 
 .primary {
@@ -152,11 +139,11 @@ body {
 
 .secondary {
   background: transparent;
-  border: 2px solid #06b6d4;
-  color: #06b6d4;
+  border: 2px solid #ffffff;
+  color: #ffffff;
 }
 
-/* Badge */
+/* ✨ Badge */
 .badge {
   display: inline-block;
   background: linear-gradient(to right, #06b6d4, #9333ea);
@@ -166,8 +153,9 @@ body {
   margin-bottom: 24px;
 }
 
-/* Seções */
+/* 📖 Seções */
 .section {
+  position: relative;
   padding: 96px 32px;
   max-width: 1200px;
   margin: 0 auto;
@@ -183,8 +171,15 @@ body {
   font-weight: 900;
 }
 
-/* História */
+/* 📚 História */
 .historia-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+}
+
+label {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
@@ -193,7 +188,6 @@ body {
 
 .historia-content .text {
   flex: 1;
-  color: #ccc;
 }
 
 .historia-content .image {
@@ -203,31 +197,39 @@ body {
 .historia-content img {
   width: 100%;
   border-radius: 24px;
-  border: 2px solid rgba(6, 182, 212, 0.3);
-  box-shadow: 0 0 24px rgba(6, 182, 212, 0.2);
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
 }
 
-/* Cards */
+/* 🧃 Cards */
 .cards {
+  position: relative;
+  z-index: 2;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
 }
 
 .card {
-  background-color: #1f1f1f;
-  border: 1px solid #333;
-  border-radius: 16px;
+  background: linear-gradient(to bottom right, #1a1a1a, #2d2d2d);
   padding: 24px;
-  transition: border 0.3s;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.3s, border 0.3s;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
-  border-color: #06b6d4;
+  transform: scale(1.03);
+  border: 2px solid #000000;
 }
 
 .card img {
   width: 100%;
+  /* CORREÇÃO DE LAYOUT: Altura fixa e object-fit */
+  height: 160px;
+  object-fit: cover;
   border-radius: 12px;
   margin-bottom: 16px;
 }
@@ -238,104 +240,23 @@ body {
 }
 
 .card p {
-  color: #aaa;
+  color: #ccc;
+  /* CORREÇÃO DE LAYOUT: Alinhamento para leitura */
+  text-align: left;
 }
 
-/* CTA */
-.cta {
-  text-align: center;
-  background: linear-gradient(to right, #06b6d4, #9333ea);
-  color: white;
-  padding: 96px 32px;
-}
-
-.cta h2 {
-  font-size: 48px;
-  margin-bottom: 16px;
-}
-
-.cta p {
-  font-size: 20px;
-  margin-bottom: 32px;
-}
-
-.cta-button {
-  background-color: white;
-  color: #9333ea;
-  font-size: 20px;
-  padding: 16px 32px;
-  border-radius: 12px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Footer */
-.footer {
-  background-color: #0f0f0f;
-  border-top: 1px solid #333;
-  text-align: center;
-  padding: 48px 32px;
-  color: #777;
-}
-
-.footer-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.footer-logo img {
-  width: 40px;
-  height: 40px;
-}
-
-.footer-logo span {
-  font-size: 20px;
-  font-weight: bold;
-  background: linear-gradient(to right, #06b6d4, #9333ea);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-/* 🔄 Espiral animada no fundo */
-.spiral-bg {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 600px;
-  height: 600px;
-  margin-left: -300px;
-  margin-top: -300px;
-  border-radius: 50%;
-  background: conic-gradient(from 1deg, #06b6d4, #9333ea, #06b6d4);
-  opacity: 0.28;
-  animation: spin 20s linear infinite;
-  z-index: 0;
-  pointer-events: none;
-  filter: blur(80px);
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+/* 🔮 Capítulo Secreto */
 .misterio-card {
   background-color: #1f1f1f;
   border: 1px dashed #9333ea;
   border-radius: 16px;
   padding: 24px;
-  color: #ccc;
+  color: #ffffff;
   text-align: center;
   transition: transform 0.3s;
 }
 
+/* 🔐 Login */
 .login-section {
   min-height: 100vh;
   display: flex;
@@ -345,18 +266,13 @@ body {
 }
 
 .login-box {
-  background-color: #1f1f1f;
+  background-color: #000;
   padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 0 24px rgba(6, 182, 212, 0.3);
+  box-shadow: 0 0 24px rgb(111, 0, 255);
   text-align: center;
-  width: 100%;
   max-width: 400px;
-}
-
-.login-box h2 {
-  margin-bottom: 24px;
-  color: #fff;
+  width: 100%;
 }
 
 .login-box input {
@@ -365,7 +281,7 @@ body {
   margin-bottom: 16px;
   border: none;
   border-radius: 8px;
-  background-color: #2a2a2a;
+  background-color: #111;
   color: #fff;
 }
 
@@ -382,11 +298,222 @@ body {
 
 #login-message {
   margin-top: 16px;
-  color: #f87171;
 }
 
-/* Botões */
-button {
-  box-shadow: 0 0 12px rgb(0, 255, 255);
-  transition: all 0.3s ease;
+/* 🚀 CTA */
+.cta {
+  text-align: center;
+  background: linear-gradient(to right, #06b6d4, #9333ea);
+  color: white;
+  padding: 96px 32px;
+}
+
+.cta-button {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* 🧦 Footer */
+.footer {
+  text-align: center;
+  padding: 48px 32px;
+  color: #ffffff;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.footer-logo img {
+  width: 48px;
+  height: 48px;
+}
+
+.footer-logo span {
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(to right, #06b6d4, #9333ea);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* 🔄 Espiral animada */
+.spiral-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  margin-left: -300px;
+  margin-top: -300px;
+  border-radius: 50%;
+  background: linear-gradient(#0048ff, #d900ff, #00d9ff, #ff0000, #d900ff, #00d9ff, #0048ff);
+  animation: spin 111s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(200px);
+  opacity: 2;
+}
+
+@keyframes spin {
+  from { transform: rotate(1110deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 🧠 Responsivo */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 40px;
+  }
+  .section {
+    padding: 64px 16px;
+  }
+  .section h2 {
+    font-size: 32px;
+  }
+  .card img {
+    max-width: 100%;
+  }
+  .login-box {
+    padding: 21px;
+  }
+}
+
+.auth-tab.active {
+  border: 2px solid #000000;
+  background: linear-gradient(to right, #06b6d4, #9333ea);
+  color: rgb(0, 255, 221);
+}
+
+.news-card {
+  background: linear-gradient(to bottom right, #1a1a1a, #2d2d2d);
+  border: 1px solid #333;
+}
+
+.news-card h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.news-card p {
+  color: #e0e0e0;
+  line-height: 1.5;
+}
+
+.news-badge {
+  background: #06b6d4;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.news-icon {
+  font-size: 2rem;
+  margin-top: 1rem;
+  display: block;
+}
+
+#perfil-box {
+  display: none !important;
+}
+
+#perfil-box {
+  background-color: #1f1f1f;
+  padding: 24px;
+  border-radius: 12px;
+  color: white;
+  margin: 32px auto;
+  max-width: 400px;
+}
+
+#configuracoes {
+  background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
+  border: 2px solid #6f00ff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  color: #fff;
+  box-shadow: 0 0 20px #6f00ff;/* já está no HTML, mas reforçamos aqui */
+}
+
+#configuracoes h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #00c3ff;
+  text-align: center;
+}
+
+#configuracoes label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #ec4899;
+}
+
+#configuracoes select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 6px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+}
+
+#configuracoes button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(90deg, #6f00ff, #00c3ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 12px #6f00ff;
+  transition: transform 0.2s ease;
+}
+
+#configuracoes button:hover {
+  transform: scale(1.05);
+}
+
+button[onclick="abrirConfiguracoes()"] {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #00c3ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 8px #00c3ff;
+}
+
+#perfil-box button {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #00c3ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 8px #00c3ff;
 }
