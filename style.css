@@ -431,6 +431,18 @@ label {
   display: none !important;
 }
 
+button{
+  font-size: 1.3em;;
+  text-decoration: none;
+  background: linear-gradient(90deg, #6f00ff, #00c3ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
 #perfil-box {
   background-color: #1f1f1f;
   padding: 24px;
@@ -495,12 +507,9 @@ label {
 }
 
 button[onclick="abrirConfiguracoes()"] {
-  margin-top: 12px;
-  padding: 8px 16px;
   background-color: #00c3ff;
   color: #fff;
   border: none;
-  border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 0 8px #00c3ff;
@@ -516,4 +525,28 @@ button[onclick="abrirConfiguracoes()"] {
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 0 8px #00c3ff;
+}
+
+a{
+  font-size: 1.3em;;
+  text-decoration: none;
+  background: linear-gradient(90deg, #6f00ff, #00c3ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+link{
+  font-size: 1.3em;;
+  text-decoration: none;
+  background: linear-gradient(90deg, #6f00ff, #00c3ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
