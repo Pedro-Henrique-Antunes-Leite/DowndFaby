@@ -1,3 +1,6 @@
+app.get('/', (req, res) => {
+  res.send('Servidor DowndFaby está online! 🚀');
+});
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -43,3 +46,4 @@ app.post('/login', async (req, res) => {
 });
 
 app.listen(3000, () => console.log('Servidor rodando na porta 3000'));
+
