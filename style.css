@@ -1,3 +1,57 @@
+.login-section {
+    /* Centraliza a caixa de login */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.login-box {
+    background-color: transparent; /* Fundo transparente */
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.auth-tab {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #333;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.auth-tab.active {
+    background-color: #007AFF; /* Cor da aba ativa */
+}
+
+#login-panel, #signup-panel, #recover-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    background-color: #222;
+    border: 1px solid #444;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* Estilo do Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
 /* 🔄 Reset básico */
 * {
   margin: 0;
@@ -31,17 +85,37 @@ body {
 
 
 /* 🔝 Navbar */
+/* 🔝 Navbar - Versão reduzida */
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgba(15, 15, 15, 0.6);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 32px;
-  z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem; /* Reduzido de 1rem 2rem */
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 50px; /* Altura fixa reduzida */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo img {
+    width: 150px; /* Reduzido de 300px */
+    height: auto;
+}
+
+.logo span {
+    font-size: 1.2rem; /* Reduzido de 1.5rem */
+    font-weight: bold;
+    color: #ffffff;
 }
 
 .main {
@@ -139,17 +213,41 @@ h1 {
   border-radius: 12px;
   cursor: pointer;
   border: none;
+  transition: all 0.3s ease;
 }
 
 .primary {
-  background: linear-gradient(to right, #06b6d4, #9333ea);
+  background: linear-gradient(45deg, #06b6d4, #ec4899);
   color: white;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
 }
 
 .secondary {
   background: transparent;
   border: 2px solid #ffffff;
   color: #ffffff;
+}
+
+/* Botões de seção com gradiente */
+.section-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(45deg, #06b6d4, #ec4899);
+  color: white;
+  margin-top: 20px;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+}
+
+.section-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
 }
 
 /* ✨ Badge */
@@ -273,44 +371,6 @@ label {
 }
 
 /* 🔐 Login */
-.login-section {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to right, #0f0f0f, #1a1a1a);
-}
-
-.login-box {
-  background-color: #000;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 0 24px rgb(111, 0, 255);
-  text-align: center;
-  max-width: 400px;
-  width: 100%;
-}
-
-.login-box input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 16px;
-  border: none;
-  border-radius: 8px;
-  background-color: #111;
-  color: #fff;
-}
-
-.login-box button {
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(to right, #06b6d4, #9333ea);
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
 
 #login-message {
   margin-top: 16px;
@@ -327,11 +387,54 @@ label {
   cursor: pointer;
 }
 
+.tab-logout {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
+#tab-logout,
+.auth-tab {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px !important;    /* diminuir preenchimento */
+  height: 38px !important;         /* altura menor */
+  min-width: 80px;
+  max-width: 160px;
+  font-size: 0.95rem !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;     /* remover sombra pesada */
+  margin: 0 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: linear-gradient(90deg, #7c3aed 0%, #06b6d4 100%) !important; /* opcional */
+}
+
+/* Garante que o botão não force a navbar a crescer */
+.navbar {
+  height: 40px;             /* ajuste conforme necessário */
+  padding: 8px 16px;
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+/* Reduz o tamanho do logo para ajudar a navbar */
+.logo img {
+  width: 40px; /* reduzir de 300px */
+  height: auto;
+}
+#tab-logout { cursor: pointer; }
 /* 🧦 Footer */
 .footer {
   text-align: center;
-  padding: 48px 32px;
+  padding: 8px 2px;
   color: #ffffff;
 }
 
@@ -356,29 +459,77 @@ label {
   color: transparent;
 }
 
-.espiral-bg {
+/* Fundo de céu noturno com estrelas e cometas */
+.night-sky-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: radial-gradient(circle at center, #00ffff, #8400ff, #ff0080);
-  background-size: 200% 200%;
-  animation: blurMotion 10s linear infinite;
-  filter: blur(20px);
-  opacity: 0.4;
+  background: linear-gradient(to bottom, #2a032f 0%, #21021e 50%, #02183e 100%);
+  overflow: hidden;
 }
 
-@keyframes blurMotion {
+.night-sky-bg::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+      radial-gradient(1px 1px at 25% 25%, rgb(0, 174, 255) 100%, transparent),
+      radial-gradient(1px 1px at 50% 50%, rgb(255, 0, 230) 100%, transparent),
+      radial-gradient(2px 2px at 75% 75%, rgb(255, 0, 183) 100%, transparent),
+      radial-gradient(1px 1px at 10% 90%, rgb(76, 0, 255) 100%, transparent),
+      radial-gradient(1.5px 1.5px at 90% 10%, rgb(255, 255, 255) 100%, transparent),
+      radial-gradient(1px 1px at 30% 70%, rgb(0, 115, 255) 100%, transparent),
+      radial-gradient(1.5px 1.5px at 70% 30%, rgb(0, 255, 225) 100%, transparent);
+  background-repeat: repeat;
+  background-size: 110px 110px;
+  opacity: 1.7;
+  animation: shooting-stars 60s linear infinite;
+}
+
+.night-sky-bg::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+      radial-gradient(1px 1px at 20% 30%, #ffffff 100%, transparent),
+      radial-gradient(1px 1px at 40% 60%, #ffffff 100%, transparent),
+      radial-gradient(1px 1px at 60% 20%, #ffffff 100%, transparent),
+      radial-gradient(1px 1px at 80% 80%, #ffffff 100%, transparent),
+      radial-gradient(1px 1px at 50% 40%, #ffffff 100%, transparent);
+  background-repeat: repeat;
+  background-size: 150px 150px;
+  opacity: 0.8;
+  animation: twinkle 5s ease-in-out infinite;
+}
+
+@keyframes move-stars {
+  0% { background-position: 0 0; }
+  100% { background-position: -1000px -1000px; }
+}
+@keyframes fade-stars {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+
+
+@keyframes twinkle {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.6; }
+}
+
+@keyframes shooting-stars {
   0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
+      background-position: 200% 200%, 150% 150%;
   }
   100% {
-    background-position: 0% 50%;
+      background-position: -100% -100%, -50% -50%;
   }
 }
 
@@ -398,6 +549,30 @@ label {
   }
   .login-box {
     padding: 21px;
+  }
+  .section-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-buttons button {
+    width: 100%;
+    max-width: 300px;
+  }
+  /* Ajustes para Webview em celular */
+  body {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Melhorar toque em dispositivos móveis */
+  .section-button, button {
+    touch-action: manipulation;
+    -webkit-appearance: none;
   }
 }
 
@@ -433,18 +608,10 @@ label {
   margin-bottom: 1rem;
 }
 
-.news-icon {
-  font-size: 2rem;
-  margin-top: 1rem;
-  display: block;
-}
-
-#perfil-box {
-  display: none !important;
-}
 
 button{
-  font-size: 1.3em;;
+
+  padding: 12px 24px;
   text-decoration: none;
   background: linear-gradient(90deg, #6f00ff, #00c3ff);
   color: white;
@@ -483,7 +650,7 @@ button{
 }
 
 #configuracoes label {
-  display: block;
+
   margin-top: 12px;
   font-weight: bold;
   color: #ec4899;
@@ -570,3 +737,19 @@ button[onclick="abrirConfiguracoes()"] {
   color: #ff0000;
 }
 
+#historia-link,
+#modos-link,
+#arsenal-link,
+#novidades-link,
+#capitulo-secreto-link {
+  display: none !important;
+}
+
+/* Ocultar links de navegação de seção indesejados */
+a[href="#historia"],
+a[href="#modos"],
+a[href="#arsenal"],
+a[href="#novidades"],
+a[href="#capitulo-secreto"] {
+  display: none !important;
+}
