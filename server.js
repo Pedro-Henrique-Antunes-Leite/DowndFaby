@@ -2,23 +2,30 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken'); // ← Faltava essa linha
 
 const app = express();
-app.use(express.json());
-app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/downdfaby', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Rota raiz
+app.get('/', (req, res) => {
+  res.send('Servidor DowndFaby está online! 🚀');
 });
 
+// Conexão com MongoDB (exemplo com variável de ambiente)
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/downdfaby');
+
+// Modelo de usuário
 const User = mongoose.model('User', new mongoose.Schema({
   name: String,
   email: String,
   password: String,
 }));
 
+// Rota de registro
 app.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
   const hashedPassword = bcrypt.hashSync(password, 8);
@@ -30,6 +37,7 @@ app.post('/register', async (req, res) => {
   }
 });
 
+// Rota de login
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
@@ -42,4 +50,8 @@ app.post('/login', async (req, res) => {
   res.json({ message: 'Login realizado com sucesso', token });
 });
 
-app.listen(3000, () => console.log('Servidor rodando na porta 3000'));
+// Porta dinâmica
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
