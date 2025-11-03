@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="com.downdfaby.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>DowndFaby</name>
+  <description>App DowndFaby (WebView Cordova)</description>
+  <author email="" href="">DowndFaby</author>
+
+  <content src="index.html" />
+
+  <!-- Preferências básicas Android -->
+  <preference name="Orientation" value="portrait" />
+  <preference name="AndroidInsecureFileModeEnabled" value="true" />
+  <preference name="DisallowOverscroll" value="true" />
+  <preference name="AutoHideSplashScreen" value="true" />
+  <preference name="ShowSplashScreenSpinner" value="false" />
+  <preference name="SplashMaintainAspectRatio" value="true" />
+
+  <!-- Whitelist / Navegação -->
+  <plugin name="cordova-plugin-whitelist" spec="^1.3.5" />
+  <allow-navigation href="*" />
+  <access origin="*" />
+
+  <!-- Domínios usados pelo app -->
+  <access origin="https://cdnjs.cloudflare.com" />
+  <access origin="https://images.unsplash.com" />
+  <access origin="https://qtrypzzcjebvfcihiynt.supabase.co" />
+  <access origin="https://facebook.com" />
+  <access origin="https://www.facebook.com" />
+  <access origin="https://twitter.com" />
+  <access origin="https://www.twitter.com" />
+  <access origin="https://x.com" />
+  <access origin="https://instagram.com" />
+  <access origin="https://www.instagram.com" />
+  <access origin="https://youtube.com" />
+  <access origin="https://www.youtube.com" />
+
+  <!-- Intents comuns -->
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  <allow-intent href="tel:*" />
+  <allow-intent href="mailto:*" />
+
+  <!-- Ícones/Splash: recomenda-se usar cordova-res para gerar e copiar -->
+  <!-- npx cordova-res android --copy -->
+</widget>

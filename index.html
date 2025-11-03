@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="hotdog">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DowndFaby</title>
+    <link rel="stylesheet" href="DowndFaby.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<main>
+    <!-- 🔝 Cabeçalho -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_69029c56c0600bb60cd0fab1/b9c75ad57_image.png" alt="DowndFaby Logo" width="120" />
+            <span>DowndFaby</span>
+        </div>
+        <span id="user-name" style="margin-left: 12px; font-weight: normal;"></span>
+        <span><button id="tab-logout" class="auth-tab">Logout</button></span>
+      </nav>
+    <div class="night-sky-bg"></div>
+    <audio id="bg-music" loop src="Lobby_DowndFaby.wav"></audio>
+    <button id="toggle-music" class="music-button">🎵</button>
+
+    <!-- Seção de Login/Cadastro -->
+    <section class="login-section">
+        <div class="login-box">
+            <div class="auth-tabs" role="tablist" aria-label="Autenticação">
+                <button class="auth-tab active" role="tab" aria-selected="true" aria-controls="login-panel" id="tab-login">Login</button>
+            </div>
+            <div id="login-panel" role="tabpanel" aria-labelledby="tab-login">
+                <form id="login-form">
+                    <input type="text" id="username" placeholder="Usuário" required />
+                    <input type="password" id="password" placeholder="Senha" required />
+                    <button type="submit" id="login-button" class="btn primary">Entrar</button>
+                </form>
+                <p id="login-message">
+                </p>
+                <button class="auth-tab" role="tab" aria-selected="false" aria-controls="signup-panel" id="tab-signup">Cadastro</button>
+            </div>
+            <div id="signup-panel" role="tabpanel" aria-labelledby="tab-signup" hidden>
+                <form id="signup-form">
+                    <input type="text" id="signup-username" placeholder="Usuário" required />
+                    <input type="email" id="signup-email" placeholder="Email" required />
+                    <input type="password" id="signup-password" placeholder="Senha" minlength="4" required />
+                    <input type="password" id="signup-confirm" placeholder="Confirmar senha" minlength="4" required />
+                    <button type="submit" id="signup-button" class="btn primary">Cadastrar</button>
+                </form>
+                <p id="signup-message"></p>
+            </div>
+            <div id="recover-panel" role="tabpanel" aria-labelledby="tab-recover" hidden>
+                <input type="email" id="recover-email" placeholder="Digite seu email" required />
+                <button id="recover-button" class="btn secondary">Recuperar Senha</button>
+                <p id="recover-message"></p>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Perfil -->
+    <div id="perfil-box" style="display: none;">
+        <h3>Perfil de Jogador</h3>
+        <p><strong>Usuário:</strong> <span id="perfil-nome"></span></p>
+        
+        <p><strong>Skin:</strong> <span id="perfil-skin"></span></p>
+        <p><strong>Modo favorito:</strong> <span id="perfil-modo"></span></p>
+        <button id="config-toggle" class="btn">⚙️ Configurações</button>
+        <div id="configuracoes" style="display: none; margin-top: 20px;">
+            <h3>Configurações</h3>
+            <label>Skin:</label>
+            <select id="skin-select">
+                <option value="padrão">Padrão</option>
+                <option value="hotdog">Hotdog</option>
+                <option value="baunilha">Baunilha</option>
+            </select>
+            <label>Modo favorito:</label>
+            <select id="modo-select">
+                <option value="Battle Royale">Battle Royale</option>
+                <option value="Equipes">Equipes</option>
+                <option value="Relâmpago">Relâmpago</option>
+            </select>
+            <button id="save-config" class="btn">Salvar</button>
+        </div>
+    </div>
+
+    <!-- 🎮 Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">✨ Desenvolvido em Unreal Engine 5.7</span>
+            <h1>DowndFaby</h1>
+            <h2>O battle royale mais delicioso do universo! Prepare-se para batalhas épicas com armas de hotdog em um mundo surreal e vibrante.</h2>
+            <div class="hero-buttons">
+                <button id="start-game" class="primary">🎮 Instalar!</button>
+                <button id="watch-trailer" class="secondary">🎯 Ver Trailer</button>
+            </div>
+        </div>
+    </section>
+
+<!-- 📖 História -->
+<section id="historia" class="section historia">
+    <h1>A História</h1>
+    <div class="historia-content">
+        <div class="text">
+            <h4>Em um universo paralelo onde os hotdogs evoluíram e ganharam consciência, uma competição épica foi criada para determinar o guerreiro definitivo.</h4>
+            <h4>Armados com os ingredientes mais letais - de rifles de salsicha a escopetas de cereal e baunilha - os competidores lutam pela supremacia em arenas futuristas geradas por tecnologia de ponta.</h4>
+            <h4>Você está pronto para se tornar a lenda de DowndFaby? O campo de batalha aguarda!</h4>
+            <a href="#modos" class="section-button">Conhecer os Modos de Jogo</a>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80" alt="Battle Arena" />
+        </div>
+    </div>
+</section>
+
+<!-- 🧃 Modos de Jogo -->
+<section id="modos" class="section modos">
+    <h1>Modos de Jogo</h1>
+    <div class="cards" id="game-modes">
+        <div class="card">
+            <div style="font-size: 32px; margin-bottom: 12px; color: #06b6d4">🏆</div>
+            <h3>Battle Royale Clássico</h3>
+            <p>100 jogadores, 1 vencedor. Sobreviva na arena de hotdogs!</p>
+        </div>
+        <div class="card">
+            <div style="font-size: 32px; margin-bottom: 12px; color: #ec4899">👥</div>
+            <h3>Modo Equipes</h3>
+            <p>Forme esquadrões de 4 e domine o campo de batalha</p>
+        </div>
+        <div class="card">
+            <div style="font-size: 32px; margin-bottom: 12px; color: #f97316">⚡</div>
+            <h3>Arena Relâmpago</h3>
+            <p>Partidas rápidas de 10 minutos com ação intensa</p>
+        </div>
+    </div>
+    <a href="#arsenal" class="section-button">Ver Arsenal de Armas</a>
+</section>
+
+<!-- 🔫 Arsenal -->
+<section id="arsenal" class="section arsenal">
+    <h1>Arsenal Letal</h1>
+    <div class="cards" id="weapons">
+        <div class="card">
+            <img src="copo artístico com salsicha lendária.png" height="80" width="80" alt="Rifle de Hotdog" />
+            <h3>Rifle de Hotdog</h3>
+            <p><strong>Rifle</strong> • Lendário</p>
+            <p>Precisão mortal com salsicha em alta velocidade</p>
+        </div>
+        <div class="card">
+            <img src="cereal em um copo épico.png" height="80" width="80" alt="Escopeta Cereal" />
+            <h3>Escopeta Cereal</h3>
+            <p><strong>Escopeta</strong> • Épico</p>
+            <p>Explosão de cereais devastadores em área</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800&q=80" alt="Escopeta Baunilha" />
+            <h3>Escopeta Baunilha</h3>
+            <p><strong>Escopeta</strong> • Raro</p>
+            <p>Doçura letal em disparos de curta distância</p>
+        </div>
+    </div>
+    <a href="#novidades" class="section-button">Conferir Novidades</a>
+</section>
+
+<!-- 📰 Novidades -->
+<section id="novidades" class="section novidades">
+    <h1>Últimas Novidades</h1>
+    <div class="cards" id="news">
+        <div class="card">
+            <div style="font-size: 32px; margin-bottom: 12px;">🔥</div>
+            <span style="color: #06b6d4; font-size: 14px;">Novo Conteúdo</span>
+            <h3 style="color: #ffffff;">Novo Mapa: Cidade Neon</h3>
+            <p style="color: #ffffff;">Explore a nova arena urbana com arranha-céus iluminados e batalhas verticais intensas!</p>
+            <div style="margin-top: 12px;">
+                <span class="badge">Disponível Agora</span>
+                <span style="color: #666; font-size: 12px; margin-left: 10px;">31/10/2025</span>
+            </div>
+        </div>
+        <div class="card">
+            <div style="font-size: 32px; margin-bottom: 12px;">✨</div>
+            <span style="color: #06b6d4; font-size: 14px;">Atualização</span>
+            <h3 style="color: #ffffff;">Sistema de Temporadas</h3>
+            <p style="color: #ffffff;">Temporada 1 começou! Desbloqueie skins exclusivas, emotes e recompensas únicas.</p>
+            <div style="margin-top: 12px;">
+                <span class="badge">Em Andamento</span>
+                <span style="color: #666; font-size: 12px; margin-left: 10px;">30/10/2025</span>
+            </div>
+        </div>
+        <div class="card">
+            <div style="font-size: 32px; margin-bottom: 12px;">🎯</div>
+            <span style="color: #06b6d4; font-size: 14px;">Balanceamento</span>
+            <h3 style="color: #ffffff;">Balanceamento de Armas</h3>
+            <p style="color: #ffffff;">Ajustes na Escopeta Cereal e melhorias no Rifle de Hotdog para gameplay mais equilibrado.</p>
+            <div style="margin-top: 12px;">
+                <span class="badge">Patch 1.2.5</span>
+                <span style="color: #666; font-size: 12px; margin-left: 10px;">29/10/2025</span>
+            </div>
+        </div>
+    </div>
+    <a href="#capitulo-secreto" class="section-button">Descobrir Capítulo Secreto</a>
+</section>
+
+<!-- ✨ Capítulo Secreto -->
+<section id="capitulo-secreto" class="section misterio">
+    <h1>Capítulo Secreto</h1>
+    <div class="cards">
+        <div class="card">
+            <div style="font-size: 32px; margin-bottom: 12px;">✨</div>
+            <h3>Mistério</h3>
+            <p></p>
+            <span class="badge">Não Revelado</span>
+        </div>
+    </div>
+    <a href="#" class="section-button" onclick="alert('Você precisa completar os desafios semanais para desbloquear este conteúdo!')">Tentar Desbloquear</a>
+</section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <h2>🚀Desenvolvido com Unreal Engine 5.7🚀</h2>
+        <h2>© 2025 DowndFaby. Todos os direitos reservados.</h2>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://facebook.com" aria-label="Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" aria-label="Twitter" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" aria-label="Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com" aria-label="YouTube" class="youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+</main>
+
+<!-- Firebase SDKs (versão compat) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<!-- Seu config e script (order importante) -->
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
