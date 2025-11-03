@@ -363,11 +363,11 @@ label {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: radial-gradient(circle at center, #102b2b, #1c0235, #731444);
+  background: radial-gradient(circle at center, #00ffff, #8400ff, #ff0080);
   background-size: 200% 200%;
   animation: blurMotion 10s linear infinite;
   filter: blur(20px);
-  opacity: 0.8;
+  opacity: 0.4;
 }
 
 @keyframes blurMotion {
@@ -569,3 +569,4 @@ button[onclick="abrirConfiguracoes()"] {
 .youtube {
   color: #ff0000;
 }
+
