@@ -8,6 +8,27 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+  <style>
+  .espiral-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    background: radial-gradient(circle at center, #00ffff, #8a2be2, #ff69b4);
+    background-size: 200% 200%;
+    animation: blurMotion 10s linear infinite;
+    filter: blur(20px);
+    opacity: 0.8;
+  }
+
+  @keyframes blurMotion {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>
   <center>
 <!-- 🔝 Cabeçalho -->
    <main style="display: none;">
@@ -255,3 +276,4 @@
   </center>
 </body>
 </html>
+
